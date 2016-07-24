@@ -1,4 +1,5 @@
 #!/usr/bin/python
+# Longest Collatz sequence
 # Solution to Project Euler problem 14
 # https://projecteuler.net/problem=14
 
