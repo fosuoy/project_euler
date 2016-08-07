@@ -1,7 +1,7 @@
 #!/usr/bin/python
-# Maximum path sum I
-# https://projecteuler.net/problem=18
-# Largest sum of below number triangle
+# Maximum path sum II
+# https://projecteuler.net/problem=67
+# Largest sum of attached number triangle
 
 import time
 
