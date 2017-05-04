@@ -13,10 +13,10 @@ def blurb():
   """)
 
 def is_abundant_number(number):
-  divisors = []
+  divisors = set()
   for divisor in range(1, int(number / 2) + 1):
     if number % divisor == 0:
-      divisors.append(divisor)
+      divisors.add(divisor)
   if sum(divisors) > number:
     return number
   else:
@@ -25,21 +25,22 @@ def is_abundant_number(number):
 def main():
   start = time.time()
 
+  blurb()
+
   ABUNDANT_NUMBERS = []
   INTEGERS_NOT_SUM_ABUNDANT_NUMBERS = []
 
   for number in range(1,28123):
     if is_abundant_number(number):
       ABUNDANT_NUMBERS.append(number)
-  ALL_NUMBERS       = list(range(1,28123))
-  SUMS_OF_ABUNDANTS = []
+  ALL_NUMBERS       = set(range(1,28123))
+  SUMS_OF_ABUNDANTS = set()
   for numbera in ABUNDANT_NUMBERS:
     for numberb in ABUNDANT_NUMBERS:
-      if numberb > numbera:
-        SUMS_OF_ABUNDANTS.append(numberb + numbera)
-  NOT_DIVISIBLE = [ x for x in ALL_NUMBERS if x not in SUMS_OF_ABUNDANTS ]
-  print(NOT_DIVISIBLE)
-  print(sum(NOT_DIVISIBLE))
+      SUMS_OF_ABUNDANTS.add(numberb + numbera)
+  RESULT = ALL_NUMBERS - SUMS_OF_ABUNDANTS
+  print(RESULT)
+  print(sum(RESULT))
       
 
   end   = time.time() - start
