@@ -11,17 +11,17 @@ def blurb():
   """)
 
 def main():
-  LIMIT = 600851475143
+  UPPER_LIMIT = 600851475143
 
   start = time.time()
 
-  i = 2
-  while i * i < LIMIT:
-    while LIMIT % i == 0:
-      LIMIT = LIMIT / i
-    i += 1
+  FACTOR = 2
+  while FACTOR * FACTOR < UPPER_LIMIT:
+    while UPPER_LIMIT % FACTOR == 0:
+      UPPER_LIMIT = UPPER_LIMIT / FACTOR
+    FACTOR += 1
 
-  RESULT = LIMIT
+  RESULT = UPPER_LIMIT
 
   end   = time.time() - start
   print("Result: %s"      % RESULT)
