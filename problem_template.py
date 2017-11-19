@@ -2,20 +2,17 @@
 import time
 
 def blurb():
-  print("""
-  blurb
-  """)
+    print("""
+    blurb
+    """)
 
 def main():
-
-  start = time.time()
-
-  RESULT = ""
-
-  end   = time.time() - start
-
-  print("Result: %s"      % RESULT)
-  print("Completed in %s" % end)
+    blurb()
+    start = time.time()
+    RESULT = ""
+    end   = time.time() - start
+    print("Result: %s"      % RESULT)
+    print("Completed in %s" % end)
 
 if __name__ == '__main__':
-  main()
+    main()
