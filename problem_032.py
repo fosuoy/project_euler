@@ -47,7 +47,7 @@ def pandigital_finder():
     '''
     Max number of digitals are:
     4 digital * 4 digits = 5 digits
-    So max product will be 98765
+    So max product will be 9876
     '''
     products = pandigits(9876)
     result = []
