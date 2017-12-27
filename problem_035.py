@@ -37,15 +37,6 @@ def find_circular_primes(upper_bound):
             print(prime)
             results.add(prime)
     print(len(primes))
-#    for prime in primes:
-#        if reverse_number(prime) in primes:
-#            rotated_prime = rotate_number(prime)
-#            while rotated_prime in primes:
-#                if rotated_prime == prime:
-#                    results.add(prime)
-#                    print(prime)
-#                    break
-#                rotated_prime = rotate_number(rotated_prime)
     return len(results)
 
 def main():
