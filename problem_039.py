@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import time
+import math
 
 def blurb():
     print("""
@@ -14,15 +15,18 @@ def find_solutions_for_triangle(number, powers):
     upper_bound = number - 2
     results = []
     products = set()
-    test_range = range(1,upper_bound)
-    for a in test_range:
-        for b in test_range[::-1]:
+    middle_bound = upper_bound // 2
+    quarter_bound = middle_bound // 2
+    test_range_lower = range(1, quarter_bound)
+    test_range_high = range(quarter_bound, middle_bound)
+    for a in test_range_lower:
+        for b in test_range_high:
             if b > a:
                 a_2 = powers[a]
                 b_2 = powers[b]
                 c_2 = powers[a] + powers[b]
                 try:
-                    c = powers.index(c_2)
+                    c = math.sqrt(c_2)
                     if a + b + c == number and c not in products:
                         products.add(c)
                         results.append([a, b, c])
