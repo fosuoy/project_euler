@@ -1,5 +1,10 @@
 Solutions for Project Euler problems:
 https://projecteuler.net/archives
 
-python folder contains python solutions
-go folder contains go solutions
+Solutions in:
+python
+go
+c++
+javascript
+
+Out of interest to see which language is most performant / easiest to write etc.
