@@ -13,14 +13,15 @@ By considering the terms in the Fibonacci sequence whose values do not exceed fo
   """)
 
 def find_fibonacci_sequence(LIMIT):
-  RESULT  = {1,2}
+  fibonacci_sequence  = {1,2}
   OLD_MAX = 1
-  while max(RESULT) < LIMIT:
-    CURRENT_MAX = max(RESULT)
+  while max(fibonacci_sequence) < LIMIT:
+    CURRENT_MAX = max(fibonacci_sequence)
     NEXT        = CURRENT_MAX + OLD_MAX
     OLD_MAX     = CURRENT_MAX
-    RESULT.add(NEXT)
-  RESULT.remove(max(RESULT))
+    fibonacci_sequence.add(NEXT)
+  fibonacci_sequence.remove(max(fibonacci_sequence))
+  RESULT = [x for x in fibonacci_sequence if x % 2 == 0]
   return RESULT
 
 
