@@ -30,13 +30,10 @@ bool Divisible(int test, int upper_bound)
 int problem_005(int upper_bound)
 {
     bool solution_reached = false;
-    int i;
+    int i = upper_bound;
     int result;
     while (solution_reached == false) {
         i = i + 1;
-        if (i <= upper_bound) {
-            continue;
-        }
         bool is_divisible_by_all = Divisible(i, upper_bound);
         if (is_divisible_by_all == true) {
             result = i;
