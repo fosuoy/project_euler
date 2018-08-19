@@ -44,7 +44,7 @@ func findLargestFactor(numbers []int, lowerBound int, upperBound int) int {
     for i := len(numbers) - 1 ; i >= 0 ; i-- {
         var palindromicNumber int = numbers[i]
         for j := upperBound ; j >= lowerBound ; j-- {
-            if palindromicNumber % j == 0 && lowerBound <= j && j <= upperBound {
+            if palindromicNumber % j == 0 {
                 var divisor int = palindromicNumber / j
                 if lowerBound <= divisor && divisor <= upperBound {
                     fmt.Printf("%d * %d == %d\n", j, divisor, palindromicNumber)
@@ -57,9 +57,11 @@ func findLargestFactor(numbers []int, lowerBound int, upperBound int) int {
 }
 
 
-func problem004() (result int) {
-    palindromicNumbers := findPalindromicNumbers(100*100, 999*999)
-    result = findLargestFactor(palindromicNumbers, 100, 999)
+func problem004(lowerBound, upperBound int) (result int) {
+    var palindromicNumbers []int = findPalindromicNumbers(
+                                       lowerBound * lowerBound,
+                                       upperBound * upperBound)
+    result = findLargestFactor(palindromicNumbers, lowerBound, upperBound)
     return
 }
 
@@ -67,7 +69,7 @@ func problem004() (result int) {
 func main() {
     blurb()
     var start time.Time = time.Now()
-    var result int = problem004()
+    var result int = problem004(100, 999)
     var end time.Time = time.Now()
     var elapsed time.Duration = end.Sub(start)
     fmt.Printf("Result: %v\n", result)
