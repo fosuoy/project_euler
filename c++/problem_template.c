@@ -2,7 +2,7 @@
 #include<stdio.h>
 /* Template for creating problem solutions */
 
-int blurb(void)
+void blurb()
 {
     const char * blurb = R"(
         blurb.
@@ -24,5 +24,4 @@ int main(void)
     float elapsed_secs = ((float)end - (float)begin) / 1000000.0F;
     printf("Result: %d \n", result);
     printf("Completed in: %f seconds. \n", elapsed_secs);
-    return 0;
 }
