@@ -1,5 +1,6 @@
 #include<time.h>
 #include<stdio.h>
+#include<iostream>
 /* Template for creating problem solutions */
 
 void blurb()
@@ -10,7 +11,7 @@ void blurb()
     printf("%s \n", blurb);
 }
 
-int problem_xxx(int x)
+long problem_xxx(int x)
 {
     return x;
 }
@@ -19,9 +20,9 @@ int main(void)
 {
     blurb();
     clock_t begin = clock();
-    int result = problem_xxx(1);
+    long result = problem_xxx(1);
     clock_t end = clock();
     float elapsed_secs = ((float)end - (float)begin) / 1000000.0F;
-    printf("Result: %d \n", result);
-    printf("Completed in: %f seconds. \n", elapsed_secs);
+    std::cout << "Result: " << result << "\n";
+    std::cout << "Completed in: " << elapsed_secs << " seconds." << "\n";
 }
