@@ -3,16 +3,11 @@
             [clojure.string :as s])
   (:gen-class))
 
-(defn- find-solution
-  [solution]
-  (let [result (time (eval solution))]
-    (clojure.pprint/pprint (str ("Result: " result)))))
-
 (defn- palindromic?
   [number]
   (let [reversed (-> (str number) reverse s/join)
         number-s (-> number str)]
-    (if (= reversed number-s) true false)))
+    (= reversed number-s)))
 
 (defn- find-largest-palindromic-product
   [lower-range upper-range s-pallindrome l-pallindrome]

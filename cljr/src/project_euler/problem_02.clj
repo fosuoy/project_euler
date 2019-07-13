@@ -2,11 +2,6 @@
   (:require [project-euler.common :as common])
   (:gen-class))
 
-(defn find-solution
-  [solution]
-  (let [result (time (eval solution))]
-    (clojure.pprint/pprint (str ("Result: " result)))))
-
 (defn problem-02-solve
   "
   problem 02... takes no arguments
